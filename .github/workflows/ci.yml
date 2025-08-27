@@ -21,6 +21,8 @@ jobs:
       - name: Run tests
         run: pytest -q
         working-directory: backend
+        env:
+          PYTHONPATH: ${{ github.workspace }}/backend
 
   frontend:
     runs-on: ubuntu-latest
