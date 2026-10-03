@@ -2,13 +2,13 @@
 
 A minimal full‑stack demo to showcase CI/CD with **GitHub Actions**, container publishing to **GHCR**, and a mirror pipeline in **Azure DevOps**.
 
-## Stack
+## Tech Stack
 - **Backend:** FastAPI (`/health`, `/api/hello`), tests with `pytest`
 - **Frontend:** React + Vite consuming the API (configurable via `VITE_API_BASE`)
 - **Docker:** Separate images for backend and frontend
 - **CI/CD:** GitHub Actions (build+test+publish) and Azure Pipelines (build+test)
 
-## Quickstart (local)
+## Quickstart
 ```bash
 # backend
 pip install -r backend/requirements.txt
@@ -20,7 +20,7 @@ npm install
 VITE_API_BASE=http://localhost:8000 npm run dev
 ```
 
-## GitHub Actions
+## CI/CD with GitHub Actions
 - `.github/workflows/ci.yml` builds backend & frontend and runs tests on push/PR.
 - `.github/workflows/docker-publish.yml` builds and pushes images to GHCR.
   - Requires **no extra secrets**; uses `GITHUB_TOKEN` with `packages: write` permission.
@@ -31,7 +31,7 @@ ghcr.io/<your-account>/devops-demo-backend:latest
 ghcr.io/<your-account>/devops-demo-frontend:latest
 ```
 
-## Azure DevOps
+## CI/CD with Azure DevOps
 - `azure-pipelines.yml` builds & tests both services.
 - Add a deploy stage once you create a Service Connection to your target (Azure Web App, ACR, etc.).
 
