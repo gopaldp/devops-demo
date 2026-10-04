@@ -92,9 +92,17 @@ docker run -p 8080:80 devops-demo-frontend
 
 GitHub Actions workflows publish container images to GHCR (`ghcr.io/<owner>/devops-demo-backend` and `ghcr.io/<owner>/devops-demo-frontend`).
 
+The registered pipelines are:
+- **CI (build & test)** (GitHub Actions workflow)
+- **Copilot Setup Steps** (GitHub Actions workflow)
+- **Generate or Update Docs** (GitHub Actions workflow)
+- **Generate or Update Docs (Gemini)** (GitHub Actions workflow)
+- **Publish Docker images (GHCR)** (GitHub Actions workflow)
+
 ## Documentation
 - [Architecture Guide](docs/architecture.md)
 - [Setup & Troubleshooting Guide](docs/setup.md)
+- [Documentation portal](http://localhost:1313/repos/github/gopaldp/devops-demo/)
 
 ---
 
